@@ -8,9 +8,6 @@ import utils.DriverFactory;
 public class Base {
 	public static WebDriver driver = DriverFactory.getDriver();
 
-	@AfterTest
-	public void tearDown() {
-		driver.quit();
-		driver.close();
+	
 	}
-}
+
