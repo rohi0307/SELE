@@ -5,22 +5,18 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class GetProperty {
-	public static Properties prop;
+    public static Properties prop;
+    static{
+        try {
+            FileInputStream file=new FileInputStream(System.getProperty("user.dir") + "/src/test/resources/TestData.properties");
+            prop=new Properties();
+            prop.load(file);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-	static {
-		try {
-			prop = new Properties();
-			FileInputStream file = new FileInputStream(
-					"C:\\Users\\rohi4\\Ghost\\SwagLabs\\src\\test\\resources\\TestData.properties");
-			prop.load(file);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	
-	public static String getProperty(String key) {
-		return prop.getProperty(key);
-	}
-
+    public static String getProperty(String key) {
+        return prop.getProperty(key);
+    }
 }
