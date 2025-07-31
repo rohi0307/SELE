@@ -22,6 +22,5 @@ public class Test_01 extends Base{
         TakeSnip.takeSnip();
         loginPage.loginToPortal();
         System.out.println("Test Executed");
-        
     }
 }
